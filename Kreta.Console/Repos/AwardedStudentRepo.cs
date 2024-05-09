@@ -15,7 +15,13 @@ namespace Kreta.Console.Repos
 
         public double GetAwardAvarage()
         {
-            return Math.Round(_awardedStudents.Average(student => student.Award), 2);
+            return Math.Round(_awardedStudents.Where(student => student.MonthlyPayment).Average(student => student.Award)
+                , 2);
+        }
+
+        public int GetNumberOfGender(bool isWoman)
+        {
+            return _awardedStudents.Count(student => student.IsWooman == isWoman);
         }
 
         public int GetOneTimePaymentInYear()
@@ -31,7 +37,7 @@ namespace Kreta.Console.Repos
                 .Where(student => student.MonthlyPayment)
                 .Sum(student => student.Award)*10;
             int oneTimePayment = _awardedStudents
-                .Where(student => !student.MonthlyPayment)
+                .Where(student => ! student.MonthlyPayment)
                 .Sum(student => student.Award);
             return monthlyAmounts + oneTimePayment;
 
@@ -74,11 +80,6 @@ namespace Kreta.Console.Repos
                     .Min();
         }
 
-        public int GetNumberOfGender(bool isWoman)
-        {
-            return _awardedStudents.Count(student => student.IsWooman==isWoman);
-        }
-
         public List<StudentScholarship> GetAdultStudentScholarship()
         {
             List<StudentScholarship> studentScholarships = new List<StudentScholarship>();
@@ -92,6 +93,15 @@ namespace Kreta.Console.Repos
                     });
             }
             return studentScholarships;
+        }
+
+        public string GetYoungestAwardedStudentName()
+        {
+            if (!_awardedStudents.Any())
+                return string.Empty;
+            int min=_awardedStudents.Select(_awardedStudents => _awardedStudents.Age).Min();
+            return _awardedStudents.Where(student => student.Age==min).First().Name;
+           
         }
     }
 }

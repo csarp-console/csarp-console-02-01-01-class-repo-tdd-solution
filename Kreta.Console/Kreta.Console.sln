@@ -7,11 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kreta.Console", "Kreta.Cons
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91068500-7FF0-4488-8022-F0994FFA8306}"
 	ProjectSection(SolutionItems) = preProject
-		..\feladat.docx = ..\feladat.docx
 		..\tesztesetek.docx = ..\tesztesetek.docx
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kreta.ConsoleTests", "..\Kreta.ConsoleTests\Kreta.ConsoleTests.csproj", "{246A1852-9C78-49FF-AAD0-496817B05E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kreta.ConsoleTests", "..\Kreta.ConsoleTests\Kreta.ConsoleTests.csproj", "{246A1852-9C78-49FF-AAD0-496817B05E59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

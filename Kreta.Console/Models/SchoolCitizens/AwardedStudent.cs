@@ -11,12 +11,12 @@
             SchoolClass = string.Empty;
         }
 
-        public AwardedStudent(string name, int age, int award, bool isOneAward, string schoolClass, bool isWooman)
+        public AwardedStudent(string name, int age, int award, bool montlyPayment, string schoolClass, bool isWooman)
         {
             Name = name;
             Age = age;
             Award = award;
-            MonthlyPayment = isOneAward;
+            MonthlyPayment = montlyPayment;
             SchoolClass = schoolClass;
             IsWooman = isWooman;
         }
@@ -39,7 +39,7 @@
         public override string ToString()
         {
             string isOneString = "Az ösztöndíj egyszeri juttatás!";
-            if (!MonthlyPayment) 
+            if (MonthlyPayment) 
             {
                 isOneString = "Az ösztöndíj havi juttatás!";
             }
