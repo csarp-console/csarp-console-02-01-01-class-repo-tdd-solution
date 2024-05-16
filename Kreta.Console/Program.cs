@@ -7,9 +7,9 @@ Console.WriteLine(tunde);
 AwardedStudent denes = new AwardedStudent("Dolgos Dénes", 18, 5000, false,"9.a", false);
 
 if (tunde.Age > denes.Age)
-    Console.WriteLine($"{tunde.Name} idősebb, mint {denes.Age}!");
+    Console.WriteLine($"{tunde.Name} idősebb, mint {denes.Name}!");
 else if (tunde.Age < denes.Age)
-    Console.WriteLine($"{denes.Name} idősebb, mint {tunde.Age}!");
+    Console.WriteLine($"{denes.Name} idősebb, mint {tunde.Name}!");
 else
     Console.WriteLine("A két diák ugyan annyi éves!");
 
